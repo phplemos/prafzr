@@ -38,15 +38,12 @@ public class TarefaService {
         alterada.setDataVencimento(newTarefa.getDataVencimento());
         alterada.setStatus(newTarefa.getStatus());
 
-        if(repository.save(alterada) != null){ // verificando se salvou
-            return true;
-        }
-        return false;
+        // verificando se salvou
+        return repository.save(alterada) != null;
     }
 
-    public String excluirTarefa(UUID id){
+    public void excluirTarefa(UUID id){
         repository.deleteById(id);
-        return "Excluído";
     }
 
 
