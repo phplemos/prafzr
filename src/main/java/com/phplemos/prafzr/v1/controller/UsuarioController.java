@@ -1,9 +1,8 @@
-package com.phplemos.prafzr.controller;
+package com.phplemos.prafzr.v1.controller;
 
 
-import com.phplemos.prafzr.model.Usuario;
-import com.phplemos.prafzr.repository.UsuarioRepository;
-import com.phplemos.prafzr.service.UsuarioService;
+import com.phplemos.prafzr.v1.model.UsuarioModel;
+import com.phplemos.prafzr.v1.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +17,11 @@ public class UsuarioController {
     private UsuarioService service;
 
     @GetMapping("/{id}")
-    public Optional<Usuario> informacaoUsuario(@PathVariable UUID id){
+    public Optional<UsuarioModel> informacaoUsuario(@PathVariable Long id){
         return service.informacaoUsuario(id);
     }
     @PostMapping
-    public Usuario cadastroUsuario(@RequestBody Usuario newUser){
+    public UsuarioModel cadastroUsuario(@RequestBody UsuarioModel newUser){
         return service.criarUsuario(newUser);
     }
 

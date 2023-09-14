@@ -1,10 +1,11 @@
-package com.phplemos.prafzr.model;
+package com.phplemos.prafzr.v1.model;
 
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -19,10 +20,10 @@ import java.util.UUID;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario {
+public class UsuarioModel extends RepresentationModel<UsuarioModel> {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     @Column(nullable = false)
     private String nome;
     @Column(nullable = false)
