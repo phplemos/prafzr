@@ -35,7 +35,7 @@ public class TarefaController {
     public String editarTarefa(@PathVariable UUID id, @RequestBody Tarefa alterada){
         if(service.editarTarefa(id,alterada)){
             return "Tarefa alterada com sucesso";
-        };
+        }
         return "Falha ao alterar a tarefa";
     }
 
