@@ -21,8 +21,7 @@ public class Tarefa {
     private String titulo;
     @Column(length = 250)
     private String descricao;
-    private String status;
+    private Boolean status;
     private LocalDate dataVencimento;
-
 
 }
