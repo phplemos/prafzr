@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 @Data
 @Entity

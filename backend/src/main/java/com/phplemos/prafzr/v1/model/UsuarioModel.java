@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 /**
  *
@@ -30,4 +29,10 @@ public class UsuarioModel extends RepresentationModel<UsuarioModel> {
     private String senha;
     private String email;
     private LocalDate localDate = LocalDate.now();
+
+    public UsuarioModel(String nome, String senha, String email) {
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+    }
 }
